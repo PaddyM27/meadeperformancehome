@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meade Performance — Brand Guidelines</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --black:#080808;
+  --white:#F5F2EC;
+  --grey:#111110;
+  --mid:#1A1A18;
+  --rule:#2A2A28;
+  --dim:#9A9A94;
+  --dim2:#6A6A66;
+  --accent:#F5F2EC;
+}
+
+html{background:var(--black);scroll-behavior:smooth}
+
+body{
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  background:var(--black);
+  color:var(--white);
+  line-height:1.5;
+}
+
+/* ── PAGE SECTIONS ── */
+.page{
+  min-height:100vh;
+  padding:72px 80px;
+  border-bottom:0.5px solid var(--rule);
+  position:relative;
+  overflow:hidden;
+}
+
+/* ── COVER ── */
+.cover{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:var(--black);
+}
+
+.cover-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  flex:1;
+  margin-top:48px;
+}
+
+.cover-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding-bottom:80px;
+  border-right:0.5px solid var(--rule);
+  padding-right:60px;
+}
+
+.cover-right{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-left:60px;
+}
+
+.cover-logo-display{
+  text-align:center;
+}
+
+.cover-logo-display .wordmark-large{
+  font-size:96px;
+  font-weight:700;
+  letter-spacing:-0.04em;
+  line-height:0.85;
+  text-transform:uppercase;
+  color:var(--white);
+  display:block;
+}
+
+.cover-logo-display .wordmark-sub{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:42px;
+  color:var(--dim);
+  display:block;
+  margin-top:4px;
+}
+
+.doc-meta{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.doc-meta-label{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--dim2);
+}
+
+.doc-meta-value{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--dim);
+}
+
+.cover-title-block{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:16px;
+}
+
+.cover-headline{
+  font-size:clamp(48px,6vw,80px);
+  font-weight:700;
+  letter-spacing:-0.04em;
+  line-height:0.88;
+  text-transform:uppercase;
+}
+
+.cover-headline em{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-weight:400;
+  color:var(--dim);
+  font-size:0.75em;
+  display:block;
+}
+
+.cover-desc{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--dim);
+  line-height:1.7;
+  max-width:400px;
+}
+
+/* ── NAV BAR ── */
+.page-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:0;
+}
+
+.nav-brand{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+}
+
+.nav-brand-main{
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--white);
+}
+
+.nav-brand-sep{
+  width:20px;
+  height:0.5px;
+  background:var(--rule);
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.nav-brand-sub{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:11px;
+  color:var(--dim);
+}
+
+.nav-section{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--dim2);
+}
+
+.nav-page{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.15em;
+  color:var(--dim2);
+}
+
+/* ── SECTION HEADERS ── */
+.section-intro{
+  padding-top:56px;
+  padding-bottom:56px;
+  border-bottom:0.5px solid var(--rule);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:end;
+}
+
+.section-number{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:120px;
+  line-height:1;
+  color:var(--rule);
+  letter-spacing:-0.05em;
+}
+
+.section-title{
+  font-size:clamp(40px,5vw,64px);
+  font-weight:700;
+  letter-spacing:-0.04em;
+  line-height:0.88;
+  text-transform:uppercase;
+}
+
+.section-title em{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-weight:400;
+  color:var(--dim);
+  font-size:0.8em;
+  display:block;
+}
+
+.section-desc{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--dim);
+  line-height:1.75;
+  align-self:start;
+  padding-top:8px;
+}
+
+/* ── RULE ── */
+hr{
+  border:none;
+  border-top:0.5px solid var(--rule);
+  margin:48px 0;
+}
+
+.rule-label{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin:48px 0 32px;
+}
+
+.rule-label::before{
+  content:'';
+  flex:1;
+  height:0.5px;
+  background:var(--rule);
+}
+
+.rule-label span{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--dim2);
+  flex-shrink:0;
+}
+
+.rule-label::after{
+  content:'';
+  flex:1;
+  height:0.5px;
+  background:var(--rule);
+}
+
+/* ── LOGO SECTION ── */
+.logo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
+  margin-top:48px;
+}
+
+.logo-cell{
+  padding:64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:24px;
+}
+
+.logo-cell.dark{background:var(--black)}
+.logo-cell.light{background:var(--white)}
+.logo-cell.grey-dark{background:#1A1A18}
+.logo-cell.grey-light{background:#E8E5DF}
+
+.logo-cell-label{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--dim2);
+  align-self:flex-start;
+  width:100%;
+}
+
+.logo-cell.light .logo-cell-label{color:#9A9A94}
+
+.logo-mark{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.logo-mark .w1{
+  font-size:64px;
+  font-weight:700;
+  letter-spacing:-0.04em;
+  line-height:0.88;
+  text-transform:uppercase;
+}
+
+.logo-mark .w2{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:28px;
+  line-height:1;
+  margin-top:2px;
+}
+
+.logo-cell.light .logo-mark .w1,
+.logo-cell.grey-light .logo-mark .w1{color:#080808}
+.logo-cell.light .logo-mark .w2,
+.logo-cell.grey-light .logo-mark .w2{color:#5A5A56}
+
+/* Horizontal lockup */
+.logo-horiz{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+}
+
+.logo-horiz .w1{
+  font-size:42px;
+  font-weight:700;
+  letter-spacing:-0.04em;
+  text-transform:uppercase;
+}
+
+.logo-horiz .sep{
+  width:1px;
+  height:32px;
+  background:currentColor;
+  opacity:0.2;
+  align-self:center;
+}
+
+.logo-horiz .w2{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:22px;
+}
+
+/* Mark only */
+.logo-pm{
+  font-size:80px;
+  font-weight:700;
+  letter-spacing:-0.06em;
+  line-height:1;
+}
+
+.logo-pm span{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-weight:400;
+}
+
+/* ── CLEAR SPACE ── */
+.clearspace-demo{
+  margin-top:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+  border:0.5px solid var(--rule);
+  position:relative;
+}
+
+.clearspace-inner{
+  border:0.5px dashed var(--dim2);
+  padding:32px 48px;
+  position:relative;
+}
+
+.clearspace-label{
+  position:absolute;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--dim2);
+}
+
+.clearspace-label.top{top:-20px;left:50%;transform:translateX(-50%)}
+.clearspace-label.bottom{bottom:-20px;left:50%;transform:translateX(-50%)}
+.clearspace-label.left{left:-48px;top:50%;transform:translateY(-50%) rotate(-90deg)}
+.clearspace-label.right{right:-48px;top:50%;transform:translateY(-50%) rotate(90deg)}
+
+/* ── COLOUR SECTION ── */
+.colour-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:2px;
+  margin-top:48px;
+}
+
+.colour-swatch{
+  display:flex;
+  flex-direction:column;
+}
+
+.swatch-block{
+  height:160px;
+}
+
+.swatch-info{
+  padding:16px 12px;
+  background:var(--grey);
+  border:0.5px solid var(--rule);
+}
+
+.swatch-name{
+  font-size:11px;
+  font-weight:700;
+  color:var(--white);
+  display:block;
+  margin-bottom:4px;
+}
+
+.swatch-hex{
+  font-size:10px;
+  color:var(--dim);
+  font-family:'Helvetica Neue',monospace;
+  display:block;
+  margin-bottom:2px;
+}
+
+.swatch-role{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:11px;
+  color:var(--dim2);
+  display:block;
+}
+
+/* Tint palette */
+.tint-row{
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:2px;
+  margin-top:24px;
+}
+
+.tint-cell{
+  height:32px;
+}
+
+/* ── TYPOGRAPHY SECTION ── */
+.type-specimen{
+  margin-top:48px;
+}
+
+.type-block{
+  padding:48px 0;
+  border-bottom:0.5px solid var(--rule);
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:40px;
+  align-items:start;
+}
+
+.type-meta{
+  padding-top:8px;
+}
+
+.type-meta-name{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--dim2);
+  display:block;
+  margin-bottom:8px;
+}
+
+.type-meta-detail{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:13px;
+  color:var(--dim);
+  line-height:1.8;
+  display:block;
+}
+
+.type-display{
+  font-size:72px;
+  font-weight:700;
+  letter-spacing:-0.04em;
+  line-height:0.85;
+  text-transform:uppercase;
+}
+
+.type-display-serif{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:72px;
+  font-weight:400;
+  line-height:0.88;
+}
+
+.type-heading{
+  font-size:32px;
+  font-weight:700;
+  letter-spacing:-0.03em;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.type-subheading{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:24px;
+  color:var(--dim);
+  line-height:1.3;
+}
+
+.type-body{
+  font-family:'Helvetica Neue',Helvetica,sans-serif;
+  font-size:15px;
+  color:var(--dim);
+  line-height:1.75;
+  max-width:540px;
+}
+
+.type-caption{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--dim2);
+}
+
+/* Scale table */
+.type-scale{
+  margin-top:48px;
+  border:0.5px solid var(--rule);
+}
+
+.scale-row{
+  display:grid;
+  grid-template-columns:100px 1fr 200px;
+  align-items:center;
+  padding:20px 24px;
+  border-bottom:0.5px solid var(--rule);
+  gap:24px;
+}
+
+.scale-row:last-child{border-bottom:none}
+
+.scale-label{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--dim2);
+}
+
+.scale-spec{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:12px;
+  color:var(--dim);
+  text-align:right;
+}
+
+/* ── TONE SECTION ── */
+.tone-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
+  margin-top:48px;
+}
+
+.tone-cell{
+  padding:40px;
+  background:var(--grey);
+  border:0.5px solid var(--rule);
+}
+
+.tone-cell.dark-alt{background:var(--mid)}
+
+.tone-tag{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.tone-tag .dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  flex-shrink:0;
+}
+
+.dot-yes{background:#5A8A5A}
+.dot-no{background:#8A5A5A}
+
+.tone-example{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:18px;
+  color:var(--white);
+  line-height:1.5;
+  margin-bottom:12px;
+}
+
+.tone-note{
+  font-size:11px;
+  color:var(--dim);
+  line-height:1.6;
+}
+
+/* ── USAGE SECTION ── */
+.usage-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:2px;
+  margin-top:48px;
+}
+
+.usage-cell{
+  border:0.5px solid var(--rule);
+}
+
+.usage-preview{
+  padding:48px 32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:200px;
+}
+
+.usage-label{
+  padding:16px 20px;
+  border-top:0.5px solid var(--rule);
+  background:var(--grey);
+}
+
+.usage-label-title{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--white);
+  display:block;
+  margin-bottom:4px;
+}
+
+.usage-label-desc{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:12px;
+  color:var(--dim);
+}
+
+/* Sample cards */
+.sample-card{
+  background:var(--grey);
+  border:0.5px solid var(--rule);
+  padding:20px;
+  width:200px;
+}
+
+.sample-tag{
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--dim2);
+  margin-bottom:10px;
+}
+
+.sample-title{
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:-0.02em;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+
+.sample-body{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:12px;
+  color:var(--dim);
+  line-height:1.5;
+}
+
+.sample-btn{
+  margin-top:16px;
+  display:inline-block;
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--black);
+  background:var(--white);
+  padding:8px 16px;
+}
+
+/* Instagram mockup */
+.insta-mock{
+  width:180px;
+}
+
+.insta-top{
+  background:var(--black);
+  padding:16px;
+  border:0.5px solid var(--rule);
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:6px;
+}
+
+.insta-handle{
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--dim);
+  text-align:center;
+}
+
+.insta-copy{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:11px;
+  color:var(--white);
+  text-align:center;
+  line-height:1.4;
+}
+
+/* ── DON'T DO ── */
+.dont-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:2px;
+  margin-top:32px;
+}
+
+.dont-cell{
+  border:0.5px solid var(--rule);
+  position:relative;
+}
+
+.dont-preview{
+  padding:40px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:140px;
+  position:relative;
+}
+
+.dont-preview::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(139,59,59,0.08) 8px,
+    rgba(139,59,59,0.08) 9px
+  );
+  pointer-events:none;
+}
+
+.dont-x{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:20px;
+  height:20px;
+  border:1px solid #8A5A5A;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+  color:#8A5A5A;
+  font-weight:700;
+}
+
+.dont-label{
+  padding:12px 16px;
+  border-top:0.5px solid var(--rule);
+  background:var(--grey);
+  font-size:10px;
+  color:var(--dim);
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+}
+
+/* ── MOTION ── */
+.motion-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
+  margin-top:48px;
+}
+
+.motion-cell{
+  padding:48px 40px;
+  background:var(--grey);
+  border:0.5px solid var(--rule);
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.motion-demo{
+  height:2px;
+  background:var(--rule);
+  position:relative;
+  overflow:hidden;
+}
+
+.motion-fill{
+  height:100%;
+  background:var(--white);
+  animation:fillAnim var(--dur, 2s) var(--ease, ease-out) infinite;
+  width:0%;
+}
+
+@keyframes fillAnim{
+  0%{width:0%}
+  70%{width:100%}
+  100%{width:100%;opacity:0}
+}
+
+.motion-label-title{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--white);
+}
+
+.motion-label-spec{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:13px;
+  color:var(--dim);
+}
+
+/* ── BACK COVER ── */
+.back-cover{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:32px;
+  background:var(--black);
+  border-bottom:none;
+}
+
+.back-cover-mark{
+  font-size:120px;
+  font-weight:700;
+  letter-spacing:-0.06em;
+  color:var(--rule);
+  line-height:1;
+}
+
+.back-cover-mark span{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-weight:400;
+}
+
+.back-cover-text{
+  text-align:center;
+}
+
+.back-cover-title{
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--dim);
+  margin-bottom:8px;
+}
+
+.back-cover-sub{
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:14px;
+  color:var(--dim2);
+}
+
+.version-line{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--rule);
+}
+
+/* ── PHOTO TREATMENT ── */
+.photo-treatment-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:2px;
+  margin-top:48px;
+}
+
+.photo-treatment-cell{
+  aspect-ratio:3/4;
+  display:flex;
+  align-items:flex-end;
+  padding:20px;
+  position:relative;
+  overflow:hidden;
+}
+
+.photo-bg{
+  position:absolute;
+  inset:0;
+}
+
+.photo-overlay{
+  position:absolute;
+  inset:0;
+}
+
+.photo-tag{
+  position:relative;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+}
+
+/* BW treatment */
+.pt-bw .photo-bg{
+  background: linear-gradient(160deg, #1a1a18 0%, #080808 100%);
+}
+.pt-bw .photo-overlay{
+  background:repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(255,255,255,0.015) 3px,
+    rgba(255,255,255,0.015) 4px
+  );
+}
+.pt-bw .photo-tag{color:var(--dim)}
+
+/* High contrast */
+.pt-hc .photo-bg{background:#F5F2EC}
+.pt-hc .photo-overlay{
+  background:linear-gradient(to top, rgba(8,8,8,0.9) 0%, transparent 60%);
+}
+.pt-hc .photo-tag{color:var(--white)}
+
+/* Grain */
+.pt-grain .photo-bg{
+  background: #0d0d0c;
+}
+.pt-grain .photo-overlay{
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E"),
+    linear-gradient(to top, rgba(8,8,8,0.8) 0%, transparent 70%);
+}
+.pt-grain .photo-tag{color:var(--white)}
+
+/* ── RESPONSIVE ── */
+/* ── PDF BUTTON ── */
+.pdf-btn{
+  position:fixed;
+  bottom:32px;
+  right:32px;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 24px;
+  background:var(--white);
+  color:var(--black);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  border:none;
+  cursor:pointer;
+  transition:opacity 150ms ease, transform 150ms ease;
+  box-shadow:0 4px 24px rgba(0,0,0,0.4);
+}
+.pdf-btn:hover{opacity:0.85;transform:translateY(-2px)}
+.pdf-btn:active{transform:translateY(0)}
+.pdf-btn svg{flex-shrink:0}
+
+@media print{
+  .pdf-btn{display:none}
+  body{background:var(--black);color:var(--white)}
+  .page{break-after:page;min-height:auto;padding:48px}
+  .section-number{font-size:80px}
+}
+
+@media(max-width:900px){
+  .page{padding:48px 32px}
+  .cover-grid{grid-template-columns:1fr}
+  .logo-grid{grid-template-columns:1fr 1fr}
+  .colour-grid{grid-template-columns:repeat(3,1fr)}
+  .type-block{grid-template-columns:1fr}
+  .usage-grid{grid-template-columns:1fr}
+  .dont-grid{grid-template-columns:1fr 1fr}
+  .photo-treatment-grid{grid-template-columns:1fr 1fr}
+  .tone-grid{grid-template-columns:1fr}
+  .motion-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════
+     COVER
+═══════════════════════════ -->
+<section class="page cover">
+  <div class="page-nav">
+    <div class="nav-brand">
+      <span class="nav-brand-main">Meade Performance</span>
+      <span class="nav-brand-sep"></span>
+      <span class="nav-brand-sub">Brand Guidelines</span>
+    </div>
+    <span class="nav-page">Version 2.0 — 2026</span>
+  </div>
+
+  <div class="cover-grid">
+    <div class="cover-left">
+      <div class="cover-title-block">
+        <h1 class="cover-headline">
+          Brand
+          <em>Guidelines</em>
+        </h1>
+        <p class="cover-desc">This document defines how Meade Performance looks, sounds, and moves. Follow it to protect the integrity of the brand across every touchpoint — digital, print, and beyond.</p>
+      </div>
+      <div class="doc-meta" style="margin-top:40px">
+        <span class="doc-meta-label">Prepared by</span>
+        <span class="doc-meta-value">Paddy Meade, Meade Performance</span>
+        <span class="doc-meta-label" style="margin-top:12px">Version</span>
+        <span class="doc-meta-value">2.0 — May 2026</span>
+        <span class="doc-meta-label" style="margin-top:12px">For use</span>
+        <span class="doc-meta-value">Internal and external partners</span>
+      </div>
+    </div>
+    <div class="cover-right">
+      <div class="cover-logo-display">
+        <span class="wordmark-large">MEADE</span>
+        <span class="wordmark-sub">Performance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     CONTENTS
+═══════════════════════════ -->
+<section class="page" style="padding-top:64px">
+  <div class="page-nav">
+    <div class="nav-brand">
+      <span class="nav-brand-main">Meade Performance</span>
+      <span class="nav-brand-sep"></span>
+      <span class="nav-brand-sub">Brand Guidelines</span>
+    </div>
+    <span class="nav-page">Contents</span>
+  </div>
+
+  <div style="margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+    <div>
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:32px">Index</div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:0.5px solid var(--rule)">
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim2)">00</span>
+            <span style="font-size:15px;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase">Brand Strategy</span>
+          </div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Positioning, slogan, symbol, story</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:0.5px solid var(--rule)">
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim2)">01</span>
+            <span style="font-size:15px;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase">Brand Identity</span>
+          </div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Logo & mark</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:0.5px solid var(--rule)">
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim2)">02</span>
+            <span style="font-size:15px;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase">Colour</span>
+          </div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Palette & usage</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:0.5px solid var(--rule)">
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim2)">03</span>
+            <span style="font-size:15px;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase">Typography</span>
+          </div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Typefaces & hierarchy</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:0.5px solid var(--rule)">
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim2)">04</span>
+            <span style="font-size:15px;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase">Tone of Voice</span>
+          </div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Writing principles</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:0.5px solid var(--rule)">
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim2)">05</span>
+            <span style="font-size:15px;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase">Photography</span>
+          </div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Visual treatment</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 0">
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim2)">06</span>
+            <span style="font-size:15px;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase">Brand in Use</span>
+          </div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Applications</span>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:32px">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:20px">Brand essence</div>
+      <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:22px;color:var(--white);line-height:1.55;margin-bottom:32px">"Built for the decided athlete — the one who's done being average and needs a system that takes that decision seriously."</p>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="padding:20px;border:0.5px solid var(--rule);background:var(--grey)">
+          <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:8px">Audience</div>
+          <div style="font-size:14px;color:var(--white)">Athletes who refuse to settle for average. Mindset-first — the sport doesn't matter, the refusal to settle is the filter.</div>
+        </div>
+        <div style="padding:20px;border:0.5px solid var(--rule);background:var(--grey)">
+          <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:8px">Positioning</div>
+          <div style="font-size:14px;color:var(--white)">The coaching system for athletes who've decided they're done being average — built around the standard they're committed to reaching, not the one they need convincing to want.</div>
+        </div>
+        <div style="padding:20px;border:0.5px solid var(--rule);background:var(--grey)">
+          <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:8px">Personality</div>
+          <div style="font-size:14px;color:var(--white)">Direct. Warm. Premium. Confident without arrogance. Doesn't motivate — meets you where you already are.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     00 — BRAND STRATEGY
+═══════════════════════════ -->
+<section class="page">
+  <div class="page-nav">
+    <div class="nav-brand">
+      <span class="nav-brand-main">Meade Performance</span>
+      <span class="nav-brand-sep"></span>
+      <span class="nav-brand-sub">Brand Strategy</span>
+    </div>
+    <span class="nav-section">00 — Brand Strategy</span>
+  </div>
+
+  <div class="section-intro">
+    <div>
+      <div class="section-number">00</div>
+      <h2 class="section-title">Brand<br><em>Strategy</em></h2>
+    </div>
+    <div>
+      <p class="section-desc">Five elements that define what Meade Performance stands for, who it speaks to, and what makes it impossible to confuse with anyone else. These are not guidelines — they are the foundation everything else is built on.</p>
+    </div>
+  </div>
+
+  <!-- SALIENT IDEA + POSITIONING -->
+  <div class="rule-label"><span>The Salient Idea</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+    <div style="padding:48px;border:0.5px solid var(--rule);background:var(--grey);display:flex;flex-direction:column;justify-content:space-between;min-height:280px">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:20px">One idea. Everything points back to it.</div>
+      <div>
+        <div style="font-size:clamp(36px,4vw,56px);font-weight:700;letter-spacing:-0.04em;line-height:0.88;text-transform:uppercase;margin-bottom:16px">Built for the<br>decided athlete.</div>
+        <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:var(--dim);line-height:1.75">Meade Performance serves athletes who have decided they will not be average — done accepting the gap between who they are and who they know they can be. Not a claim about where they are now. A decision about where they're going. Not motivation. The infrastructure for that decision.</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <div style="padding:28px;border:0.5px solid var(--rule);background:var(--mid);flex:1">
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px">Audience Filter</div>
+        <div style="font-size:14px;color:var(--white);line-height:1.5">Mindset-first. Sport-agnostic. The filter is not what they play — it's their refusal to settle for average.</div>
+      </div>
+      <div style="padding:28px;border:0.5px solid var(--rule);background:var(--mid);flex:1">
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px">What We're Not</div>
+        <div style="font-size:14px;color:var(--dim);line-height:1.5">Not a motivation brand. Not a beginners programme. Not built for athletes still deciding. Not another generic S&C system for everyone.</div>
+      </div>
+      <div style="padding:28px;border:0.5px solid var(--rule);background:var(--mid);flex:1">
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px">The Core Belief</div>
+        <div style="font-size:14px;color:var(--white);line-height:1.5">"Your standard is already there. What's missing is a system built around it."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLOGAN -->
+  <div class="rule-label"><span>Signature Slogan</span></div>
+  <div style="padding:64px;border:0.5px solid var(--rule);background:var(--grey);text-align:center;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(245,242,236,0.03) 0%,transparent 70%)"></div>
+    <div style="position:relative">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:var(--dim2);margin-bottom:24px">Signature Slogan — Seth Godin Permission Marketing Framework</div>
+      <div style="font-size:clamp(48px,6vw,80px);font-weight:700;letter-spacing:-0.04em;line-height:0.85;text-transform:uppercase;margin-bottom:24px">Average is<br>a choice.</div>
+      <div style="width:40px;height:0.5px;background:var(--rule);margin:0 auto 24px"></div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:16px;color:var(--dim);max-width:520px;margin:0 auto;line-height:1.7">Four words. A truth claim, not marketing copy. It challenges the right person and confirms exactly who Meade Performance is for. The athlete who doesn't settle hears this and feels seen. Use it to open and close everything.</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:2px">
+    <div style="padding:28px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:12px">Instagram bio</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--white);line-height:1.7">Meade Performance.<br>Average is a choice.</div>
+    </div>
+    <div style="padding:28px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:12px">Welcome email</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--white);line-height:1.7">"Average was never the plan. Average is a choice — you already made yours."</div>
+    </div>
+    <div style="padding:28px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:12px">Spoken intro</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--white);line-height:1.7">"I believe average is a choice. This is Meade Performance."</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     00b — BRAND STRATEGY cont.
+═══════════════════════════ -->
+<section class="page">
+  <div class="page-nav">
+    <div class="nav-brand">
+      <span class="nav-brand-main">Meade Performance</span>
+      <span class="nav-brand-sep"></span>
+      <span class="nav-brand-sub">Brand Strategy</span>
+    </div>
+    <span class="nav-section">00 — Brand Strategy</span>
+  </div>
+
+  <!-- SYMBOL -->
+  <div class="rule-label" style="margin-top:0"><span>Signature Symbol — The Datum Point</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+    <div style="padding:80px;border:0.5px solid var(--rule);background:var(--grey);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:32px;min-height:320px">
+      <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="72" x2="140" y2="72" stroke="#F5F2EC" stroke-width="1.5"/>
+        <line x1="70" y1="20" x2="70" y2="54" stroke="#F5F2EC" stroke-width="1.5"/>
+        <line x1="53" y1="37" x2="87" y2="37" stroke="#F5F2EC" stroke-width="1.5"/>
+      </svg>
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2);text-align:center">The Datum Point</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:12px;color:var(--dim2);text-align:center;max-width:200px;line-height:1.6">Survives without colour. Drawable from memory. Describable in one sentence.</div>
+    </div>
+    <div style="padding:48px;border:0.5px solid var(--rule);background:var(--mid)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:20px">Symbol — Seth Godin Purple Cow Framework</div>
+      <div style="font-size:22px;font-weight:700;letter-spacing:-0.03em;text-transform:uppercase;margin-bottom:8px">The Datum Point</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);margin-bottom:24px;line-height:1.6">One sentence: "Your personal baseline — the fixed point all your progress is measured from."</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0;margin-top:6px"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.6">Completely unoccupied visual territory in fitness and coaching. Nobody else is here.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0;margin-top:6px"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.6">Precision and measurement imagery communicates trust and authority before a word is read.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0;margin-top:6px"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.6">The "what is that?" reaction is highest of any option tested — it rewards the person who looks closer.</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0;margin-top:6px"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.6">Use as a stamp mark on content, embroidered on apparel, profile avatar background, video intro.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SURPRISE -->
+  <div class="rule-label"><span>Signature Surprise — The Purple Cow</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+    <div style="padding:40px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:16px">What everyone believes</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:22px;color:var(--dim);line-height:1.4;text-decoration:line-through;margin-bottom:12px">"To perform better, train harder."</div>
+      <div style="font-size:11px;color:var(--dim2);font-style:italic;line-height:1.6">The fitness industry's dominant belief. The one Meade Performance challenges directly — and is uniquely positioned to prove wrong.</div>
+    </div>
+    <div style="padding:40px;border:0.5px solid var(--rule);background:var(--mid)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:16px">The counterintuitive truth</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:22px;color:var(--white);line-height:1.4;margin-bottom:12px">"The best athletes don't train harder. They refuse to train worse."</div>
+      <div style="font-size:11px;color:var(--dim2);line-height:1.6">The gap isn't effort. It's the floor you won't go below. This is the idea worth spreading — defensible, ownable, and impossible to confuse with any competitor's message.</div>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <div class="rule-label"><span>Signature Story — The 3-Minute Script</span></div>
+  <div style="padding:48px;border:0.5px solid var(--rule);background:var(--grey)">
+    <div style="display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start">
+      <div>
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:16px">Story arc</div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="padding:14px 0;border-bottom:0.5px solid var(--rule)">
+            <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim2);margin-bottom:4px">Before</div>
+            <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:12px;color:var(--dim);line-height:1.6">County player. Captain. Maximum effort. The belief: effort = results.</div>
+          </div>
+          <div style="padding:14px 0;border-bottom:0.5px solid var(--rule)">
+            <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim2);margin-bottom:4px">Tension</div>
+            <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:12px;color:var(--dim);line-height:1.6">Ulster Final. Dropped. Despite everything.</div>
+          </div>
+          <div style="padding:14px 0;border-bottom:0.5px solid var(--rule)">
+            <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim2);margin-bottom:4px">Turning Point</div>
+            <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:12px;color:var(--dim);line-height:1.6">The effort wasn't wrong. The system was — built for average, not the standard he held.</div>
+          </div>
+          <div style="padding:14px 0">
+            <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim2);margin-bottom:4px">After</div>
+            <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:12px;color:var(--dim);line-height:1.6">Built Meade Performance — not to motivate, but to meet the standard athletes already hold.</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding:16px;background:var(--black);border:0.5px solid var(--rule)">
+          <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim2);margin-bottom:8px">Universal truth</div>
+          <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:12px;color:var(--white);line-height:1.6">"The hardest thing about being a decided athlete isn't the decision. It's discovering that everything around you was built for athletes who haven't made it yet."</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:20px">The script — under 3 minutes (use verbatim for podcasts, speaking, video)</div>
+        <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:var(--white);line-height:2">"I was captain of my county team.<br><br>
+          And I got dropped for the Ulster Final.<br><br>
+          I had put in the work. Not in the way people say it when they're making excuses. I mean I had genuinely done everything I was supposed to do. And it didn't matter.<br><br>
+          There's a specific kind of confusion that comes when you're a decided athlete and the results don't match. You can't point to the thing you didn't do. You did everything. And you still ended up where the average players ended up.<br><br>
+          That was the question I couldn't shake. If the effort is there — genuinely, undeniably there — what's the variable?<br><br>
+          The effort wasn't wrong. The system was.<br><br>
+          I'd been training as a decided athlete — but inside a system built for athletes who hadn't decided yet. No matter how high your standard, if the system pulls toward average, that's where you end up.<br><br>
+          Everything I build starts from one question: what does this athlete already demand from themselves — and how do I build a system that finally meets that?<br><br>
+          Average is a choice. You already made the other one. This is the system for that decision."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     01 — BRAND IDENTITY
+═══════════════════════════ -->
+<section class="page">
+  <div class="page-nav">
+    <div class="nav-brand">
+      <span class="nav-brand-main">Meade Performance</span>
+      <span class="nav-brand-sep"></span>
+      <span class="nav-brand-sub">Brand Guidelines</span>
+    </div>
+    <span class="nav-section">01 — Brand Identity</span>
+  </div>
+
+  <div class="section-intro">
+    <div>
+      <div class="section-number">01</div>
+      <h2 class="section-title">Brand<br><em>Identity</em></h2>
+    </div>
+    <div>
+      <p class="section-desc">The Meade Performance mark is built on contrast — the bold weight of Helvetica Neue against the warmth of EB Garamond italic. This tension between mass and elegance defines the brand visually. Never separate these elements. Never substitute the typefaces.</p>
+    </div>
+  </div>
+
+  <!-- Logo variations -->
+  <div class="rule-label"><span>Logo variations</span></div>
+
+  <div class="logo-grid">
+    <div class="logo-cell dark">
+      <div class="logo-cell-label">Primary — dark background</div>
+      <div class="logo-mark">
+        <span class="w1" style="color:var(--white)">MEADE</span>
+        <span class="w2" style="color:var(--dim)">Performance</span>
+      </div>
+    </div>
+    <div class="logo-cell light">
+      <div class="logo-cell-label">Primary — light background</div>
+      <div class="logo-mark">
+        <span class="w1" style="color:#080808">MEADE</span>
+        <span class="w2" style="color:#5A5A56">Performance</span>
+      </div>
+    </div>
+    <div class="logo-cell dark" style="padding:40px 48px;border-top:0.5px solid var(--rule)">
+      <div class="logo-cell-label">Horizontal lockup</div>
+      <div class="logo-horiz" style="color:var(--white)">
+        <span class="w1">MEADE</span>
+        <span class="sep"></span>
+        <span class="w2" style="color:var(--dim)">Performance</span>
+      </div>
+    </div>
+    <div class="logo-cell grey-dark" style="padding:40px 48px;border-top:0.5px solid var(--rule)">
+      <div class="logo-cell-label">Monogram mark</div>
+      <div class="logo-pm" style="color:var(--white)">mp<span style="color:var(--dim)">.</span></div>
+    </div>
+  </div>
+
+  <!-- Clear space -->
+  <div class="rule-label"><span>Clear space</span></div>
+
+  <div class="clearspace-demo">
+    <div class="clearspace-inner">
+      <span class="clearspace-label top">½× cap height</span>
+      <span class="clearspace-label bottom">½× cap height</span>
+      <span class="clearspace-label left">½× cap height</span>
+      <span class="clearspace-label right">½× cap height</span>
+      <div class="logo-mark" style="padding:0 8px">
+        <span class="w1" style="color:var(--white);font-size:48px">MEADE</span>
+        <span class="w2" style="color:var(--dim);font-size:21px">Performance</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Don'ts -->
+  <div class="rule-label"><span>What not to do</span></div>
+
+  <div class="dont-grid">
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div class="dont-x">✕</div>
+        <div class="logo-mark" style="opacity:0.3">
+          <span class="w1" style="color:var(--white);font-size:36px">MEADE</span>
+          <span class="w2" style="color:var(--white);font-size:16px;font-family:'Helvetica Neue',sans-serif;font-style:normal">Performance</span>
+        </div>
+      </div>
+      <div class="dont-label">Don't replace EB Garamond with any other typeface</div>
+    </div>
+    <div class="dont-cell">
+      <div class="dont-preview" style="background:#F5F2EC">
+        <div class="dont-x">✕</div>
+        <div class="logo-mark">
+          <span class="w1" style="color:#0000FF;font-size:36px">MEADE</span>
+          <span class="w2" style="color:#0000FF;font-size:16px">Performance</span>
+        </div>
+      </div>
+      <div class="dont-label">Don't use colour on the wordmark</div>
+    </div>
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div class="dont-x">✕</div>
+        <div class="logo-mark" style="transform:scaleX(1.4)">
+          <span class="w1" style="color:var(--white);font-size:36px">MEADE</span>
+          <span class="w2" style="color:var(--dim);font-size:16px">Performance</span>
+        </div>
+      </div>
+      <div class="dont-label">Don't stretch or distort the mark</div>
+    </div>
+    <div class="dont-cell">
+      <div class="dont-preview" style="background:#3a3a5c">
+        <div class="dont-x">✕</div>
+        <div class="logo-mark">
+          <span class="w1" style="color:var(--white);font-size:36px">MEADE</span>
+          <span class="w2" style="color:var(--dim);font-size:16px">Performance</span>
+        </div>
+      </div>
+      <div class="dont-label">Don't place on coloured backgrounds</div>
+    </div>
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div class="dont-x">✕</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <span style="font-size:32px;font-weight:700;letter-spacing:-0.03em;color:var(--white);text-transform:uppercase">MEADE</span>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--dim)">Performance</span>
+          <span style="font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim2)">GAA S&C Coaching</span>
+        </div>
+      </div>
+      <div class="dont-label">Don't add taglines to the locked logo</div>
+    </div>
+    <div class="dont-cell">
+      <div class="dont-preview">
+        <div class="dont-x">✕</div>
+        <div style="display:flex;flex-direction:column;align-items:center">
+          <span style="font-size:32px;font-weight:700;letter-spacing:-0.03em;color:var(--white);text-transform:uppercase;opacity:0.15">MEADE</span>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--dim);opacity:0.15">Performance</span>
+        </div>
+      </div>
+      <div class="dont-label">Don't use the mark at low opacity or as a watermark</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     02 — COLOUR
+═══════════════════════════ -->
+<section class="page">
+  <div class="page-nav">
+    <div class="nav-brand">
+      <span class="nav-brand-main">Meade Performance</span>
+      <span class="nav-brand-sep"></span>
+      <span class="nav-brand-sub">Brand Guidelines</span>
+    </div>
+    <span class="nav-section">02 — Colour</span>
+  </div>
+
+  <div class="section-intro">
+    <div>
+      <div class="section-number">02</div>
+      <h2 class="section-title">Colour<br><em>Palette</em></h2>
+    </div>
+    <div>
+      <p class="section-desc">The brand palette is deliberately minimal. Black and off-white are the primary pairing. The greys create depth and hierarchy without introducing colour. This restraint is intentional — it communicates premium, athletic editorial.</p>
+    </div>
+  </div>
+
+  <div class="colour-grid">
+    <div class="colour-swatch">
+      <div class="swatch-block" style="background:#080808"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Black</span>
+        <span class="swatch-hex">#080808</span>
+        <span class="swatch-role">Primary background</span>
+      </div>
+    </div>
+    <div class="colour-swatch">
+      <div class="swatch-block" style="background:#F5F2EC;border:0.5px solid #E8E5DF"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Off-white</span>
+        <span class="swatch-hex">#F5F2EC</span>
+        <span class="swatch-role">Primary text & light bg</span>
+      </div>
+    </div>
+    <div class="colour-swatch">
+      <div class="swatch-block" style="background:#111110"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Surface</span>
+        <span class="swatch-hex">#111110</span>
+        <span class="swatch-role">Cards & panels</span>
+      </div>
+    </div>
+    <div class="colour-swatch">
+      <div class="swatch-block" style="background:#9A9A94"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Warm grey</span>
+        <span class="swatch-hex">#9A9A94</span>
+        <span class="swatch-role">Secondary text</span>
+      </div>
+    </div>
+    <div class="colour-swatch">
+      <div class="swatch-block" style="background:#2A2A28"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">Rule</span>
+        <span class="swatch-hex">#2A2A28</span>
+        <span class="swatch-role">Borders & dividers</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tints -->
+  <div class="rule-label"><span>Black tint scale</span></div>
+  <div class="tint-row">
+    <div class="tint-cell" style="background:#080808"></div>
+    <div class="tint-cell" style="background:#111110"></div>
+    <div class="tint-cell" style="background:#1A1A18"></div>
+    <div class="tint-cell" style="background:#2A2A28"></div>
+    <div class="tint-cell" style="background:#444440"></div>
+    <div class="tint-cell" style="background:#6A6A66"></div>
+    <div class="tint-cell" style="background:#9A9A94"></div>
+    <div class="tint-cell" style="background:#F5F2EC;border:0.5px solid #E8E5DF"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:2px;margin-top:4px">
+    <span style="font-size:9px;color:var(--dim2);text-align:center">100%</span>
+    <span style="font-size:9px;color:var(--dim2);text-align:center">90%</span>
+    <span style="font-size:9px;color:var(--dim2);text-align:center">80%</span>
+    <span style="font-size:9px;color:var(--dim2);text-align:center">65%</span>
+    <span style="font-size:9px;color:var(--dim2);text-align:center">45%</span>
+    <span style="font-size:9px;color:var(--dim2);text-align:center">25%</span>
+    <span style="font-size:9px;color:var(--dim2);text-align:center">10%</span>
+    <span style="font-size:9px;color:var(--dim2);text-align:center">Off-white</span>
+  </div>
+
+  <!-- Colour rules -->
+  <div class="rule-label"><span>Colour usage rules</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px">
+    <div style="padding:28px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:12px">Do</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--dim);line-height:1.7">Use black and off-white as the dominant pairing. Reserve grey tones for hierarchy and depth only.</div>
+    </div>
+    <div style="padding:28px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:12px">Do</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--dim);line-height:1.7">Use white text on dark backgrounds. Use black text on the off-white surface only.</div>
+    </div>
+    <div style="padding:28px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:12px">Never</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--dim);line-height:1.7">Introduce any colour outside this palette — including blue, green, red, or purple — in any brand material.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     03 — TYPOGRAPHY
+═══════════════════════════ -->
+<section class="page">
+  <div class="page-nav">
+    <div class="nav-brand">
+      <span class="nav-brand-main">Meade Performance</span>
+      <span class="nav-brand-sep"></span>
+      <span class="nav-brand-sub">Brand Guidelines</span>
+    </div>
+    <span class="nav-section">03 — Typography</span>
+  </div>
+
+  <div class="section-intro">
+    <div>
+      <div class="section-number">03</div>
+      <h2 class="section-title">Type<br><em>System</em></h2>
+    </div>
+    <div>
+      <p class="section-desc">Two typefaces. One purpose. Helvetica Neue Condensed Bold carries the authority of the brand. EB Garamond Italic brings the warmth. Neither works as well alone as they do together.</p>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <!-- HN Bold -->
+    <div class="type-block">
+      <div class="type-meta">
+        <span class="type-meta-name">Primary typeface</span>
+        <span class="type-meta-detail">
+          Helvetica Neue<br>
+          Bold / 700<br>
+          Tracking: −0.04em<br>
+          All caps always
+        </span>
+      </div>
+      <div>
+        <div class="type-display">ABCDEFGH<br>IJKLMNOP<br>QRSTUVWX</div>
+        <div style="margin-top:16px;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--dim2)">0123456789 !@#&()</div>
+      </div>
+    </div>
+
+    <!-- EB Garamond -->
+    <div class="type-block">
+      <div class="type-meta">
+        <span class="type-meta-name">Accent typeface</span>
+        <span class="type-meta-detail">
+          EB Garamond<br>
+          Italic / 400<br>
+          Sentence case<br>
+          Warmth & contrast
+        </span>
+      </div>
+      <div>
+        <div class="type-display-serif">Abcdefgh<br>ijklmnop<br>qrstuvwx</div>
+        <div style="margin-top:16px;font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--dim2)">0123456789 — & () " "</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type scale -->
+  <div class="rule-label"><span>Type scale</span></div>
+
+  <div class="type-scale">
+    <div class="scale-row">
+      <span class="scale-label">Display</span>
+      <span style="font-size:56px;font-weight:700;letter-spacing:-0.04em;text-transform:uppercase;line-height:1">HEADLINE</span>
+      <span class="scale-spec">HN Bold · 56px · −0.04em</span>
+    </div>
+    <div class="scale-row">
+      <span class="scale-label">Display serif</span>
+      <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:48px;line-height:1">Subheading italic</span>
+      <span class="scale-spec">EB Garamond · 48px · 0em</span>
+    </div>
+    <div class="scale-row">
+      <span class="scale-label">Heading</span>
+      <span style="font-size:32px;font-weight:700;letter-spacing:-0.03em;text-transform:uppercase;line-height:1">Section title</span>
+      <span class="scale-spec">HN Bold · 32px · −0.03em</span>
+    </div>
+    <div class="scale-row">
+      <span class="scale-label">Subheading</span>
+      <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:22px;color:var(--dim);line-height:1">Section descriptor</span>
+      <span class="scale-spec">EB Garamond · 22px · 0em</span>
+    </div>
+    <div class="scale-row">
+      <span class="scale-label">Body</span>
+      <span style="font-size:15px;color:var(--dim);line-height:1.75;max-width:480px">The body copy is set in Helvetica Neue at 15px with generous leading. It should always be set in the dim grey tone, never in pure white.</span>
+      <span class="scale-spec">HN Regular · 15px · 0em</span>
+    </div>
+    <div class="scale-row">
+      <span class="scale-label">Caption</span>
+      <span style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2)">Label / Tag / Caption</span>
+      <span class="scale-spec">HN Bold · 9px · 0.3em</span>
+    </div>
+  </div>
+
+  <!-- Pairing example -->
+  <div class="rule-label"><span>In use — typographic pairing</span></div>
+  <div style="padding:56px;border:0.5px solid var(--rule);background:var(--grey)">
+    <div style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:16px">GAA Accelerator — Cohort 1</div>
+    <div style="font-size:52px;font-weight:700;letter-spacing:-0.04em;line-height:0.88;text-transform:uppercase;margin-bottom:4px">Get stronger,</div>
+    <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:46px;color:var(--dim);line-height:0.92;margin-bottom:24px">more powerful.</div>
+    <div style="font-size:14px;color:var(--dim);line-height:1.75;max-width:480px">90 days. Built around your GAA season. This is the system that translates gym work to pitch performance — and the data to prove it worked.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     04 — TONE OF VOICE
+═══════════════════════════ -->
+<section class="page">
+  <div class="page-nav">
+    <div class="nav-brand">
+      <span class="nav-brand-main">Meade Performance</span>
+      <span class="nav-brand-sep"></span>
+      <span class="nav-brand-sub">Brand Guidelines</span>
+    </div>
+    <span class="nav-section">04 — Tone of Voice</span>
+  </div>
+
+  <div class="section-intro">
+    <div>
+      <div class="section-number">04</div>
+      <h2 class="section-title">Tone<br><em>of Voice</em></h2>
+    </div>
+    <div>
+      <p class="section-desc">Meade Performance speaks like a player who's been in the trenches — direct, honest, and warm. No hype. No hollow motivation. Just the truth about what it takes, delivered with empathy and authority.</p>
+    </div>
+  </div>
+
+  <!-- Brand pillars -->
+  <div class="rule-label"><span>Voice pillars</span></div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:40px">
+    <div style="padding:28px 24px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:12px">01</div>
+      <div style="font-size:17px;font-weight:700;letter-spacing:-0.02em;text-transform:uppercase;margin-bottom:10px">Direct</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.65">Say what you mean. Short sentences. No padding. No filler words.</div>
+    </div>
+    <div style="padding:28px 24px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:12px">02</div>
+      <div style="font-size:17px;font-weight:700;letter-spacing:-0.02em;text-transform:uppercase;margin-bottom:10px">Honest</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.65">No hype. No overclaiming. The results speak — your job is to point at them.</div>
+    </div>
+    <div style="padding:28px 24px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:12px">03</div>
+      <div style="font-size:17px;font-weight:700;letter-spacing:-0.02em;text-transform:uppercase;margin-bottom:10px">Warm</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.65">You understand the struggle. You've been there. Empathy is the differentiator.</div>
+    </div>
+    <div style="padding:28px 24px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:12px">04</div>
+      <div style="font-size:17px;font-weight:700;letter-spacing:-0.02em;text-transform:uppercase;margin-bottom:10px">Confident</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.65">Authority without arrogance. You know what works. You don't need to prove it.</div>
+    </div>
+  </div>
+
+  <!-- Do / Don't -->
+  <div class="rule-label"><span>Writing — do and don't</span></div>
+  <div class="tone-grid">
+    <div class="tone-cell">
+      <div class="tone-tag" style="color:#7A9A7A"><span class="dot dot-yes"></span>Do write like this</div>
+      <div class="tone-example">"Most club players aren't unfit. They're untrained. There's a difference — and it's fixable in 8 weeks."</div>
+      <div class="tone-note">Short. Punchy. Speaks their language. Confident without dismissing them.</div>
+    </div>
+    <div class="tone-cell dark-alt">
+      <div class="tone-tag" style="color:#9A7A7A"><span class="dot dot-no"></span>Not like this</div>
+      <div class="tone-example" style="color:var(--dim)">"Our revolutionary GAA performance system will transform your athletic potential and unlock your true capabilities!"</div>
+      <div class="tone-note">Hyperbolic. Hollow. Sounds like every other fitness brand. Zero specificity.</div>
+    </div>
+    <div class="tone-cell dark-alt">
+      <div class="tone-tag" style="color:#7A9A7A"><span class="dot dot-yes"></span>Do write like this</div>
+      <div class="tone-example">"Follow it for two weeks. If it's not working, I'll buy it back at full price."</div>
+      <div class="tone-note">The guarantee said plainly. Confidence without ceremony. This is the tone.</div>
+    </div>
+    <div class="tone-cell">
+      <div class="tone-tag" style="color:#9A7A7A"><span class="dot dot-no"></span>Not like this</div>
+      <div class="tone-example" style="color:var(--dim)">"We are so passionate about helping GAA athletes reach their amazing full potential with our incredible programme!"</div>
+      <div class="tone-note">Excessive energy. Enthusiasm without substance. Reads as inauthentic.</div>
+    </div>
+  </div>
+
+  <!-- Voice in context -->
+  <div class="rule-label"><span>Voice in context</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px">
+    <div style="padding:28px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:16px">Instagram caption</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--white);line-height:1.7;margin-bottom:12px">"You're in the gym three times a week. Come match day, nothing feels different. That's not a fitness problem — that's a structure problem."</div>
+      <div style="font-size:10px;color:var(--dim2)">Problem → insight → solution implied</div>
+    </div>
+    <div style="padding:28px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:16px">DM opener</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--white);line-height:1.7;margin-bottom:12px">"Hey Conor — how long have you been training in the gym?"</div>
+      <div style="font-size:10px;color:var(--dim2)">Simple. Personal. Non-threatening. Starts a conversation.</div>
+    </div>
+    <div style="padding:28px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:16px">Email subject line</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--white);line-height:1.7;margin-bottom:12px">"You're in — here's everything you need"</div>
+      <div style="font-size:10px;color:var(--dim2)">Clear. Action-forward. No preamble. Delivers on the promise immediately.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     05 — PHOTOGRAPHY
+═══════════════════════════ -->
+<section class="page">
+  <div class="page-nav">
+    <div class="nav-brand">
+      <span class="nav-brand-main">Meade Performance</span>
+      <span class="nav-brand-sep"></span>
+      <span class="nav-brand-sub">Brand Guidelines</span>
+    </div>
+    <span class="nav-section">05 — Photography</span>
+  </div>
+
+  <div class="section-intro">
+    <div>
+      <div class="section-number">05</div>
+      <h2 class="section-title">Photo<br><em>Treatment</em></h2>
+    </div>
+    <div>
+      <p class="section-desc">Meade Performance imagery is editorial, not promotional. Authentic moments over posed shots. The treatment is always black and white or heavily desaturated — maintaining the monochrome brand world regardless of the original photograph.</p>
+    </div>
+  </div>
+
+  <div class="photo-treatment-grid">
+    <div class="photo-treatment-cell pt-bw">
+      <div class="photo-bg"></div>
+      <div class="photo-overlay"></div>
+      <div style="position:relative;width:100%">
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:6px">Primary treatment</div>
+        <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Black & white, high contrast. The default for all brand photography.</div>
+      </div>
+    </div>
+    <div class="photo-treatment-cell pt-hc">
+      <div class="photo-bg"></div>
+      <div class="photo-overlay"></div>
+      <div style="position:relative;width:100%">
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,242,236,0.5);margin-bottom:6px">Secondary treatment</div>
+        <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:rgba(245,242,236,0.4)">Dark overlay on lighter images. Maintains text legibility across imagery.</div>
+      </div>
+    </div>
+    <div class="photo-treatment-cell pt-grain">
+      <div class="photo-bg"></div>
+      <div class="photo-overlay"></div>
+      <div style="position:relative;width:100%">
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:6px">Texture treatment</div>
+        <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Film grain overlay for editorial content. Instagram and long-form.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photography principles -->
+  <div class="rule-label"><span>Photography principles</span></div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px">
+    <div style="padding:24px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px">Authentic</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.65">Real training environments. Real athletes. Not studio lighting and fake sweat.</div>
+    </div>
+    <div style="padding:24px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px">Purposeful</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.65">Every image should show the work — a lift, a sprint, a moment of effort or focus.</div>
+    </div>
+    <div style="padding:24px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px">Monochrome</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.65">All photography used in brand materials must be black and white or desaturated.</div>
+    </div>
+    <div style="padding:24px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px">Minimal</div>
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim);line-height:1.65">Clean backgrounds. Uncrowded compositions. The athlete is the subject — always.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     06 — BRAND IN USE
+═══════════════════════════ -->
+<section class="page">
+  <div class="page-nav">
+    <div class="nav-brand">
+      <span class="nav-brand-main">Meade Performance</span>
+      <span class="nav-brand-sep"></span>
+      <span class="nav-brand-sub">Brand Guidelines</span>
+    </div>
+    <span class="nav-section">06 — Brand in Use</span>
+  </div>
+
+  <div class="section-intro">
+    <div>
+      <div class="section-number">06</div>
+      <h2 class="section-title">Brand<br><em>in Use</em></h2>
+    </div>
+    <div>
+      <p class="section-desc">How the brand system applies across real touchpoints — digital product, social content, and direct communication. Consistency across these is what builds recognition.</p>
+    </div>
+  </div>
+
+  <div class="usage-grid">
+    <!-- Instagram post -->
+    <div class="usage-cell">
+      <div class="usage-preview" style="background:var(--grey);flex-direction:column;gap:16px">
+        <div class="insta-mock">
+          <div class="insta-top">
+            <div style="font-size:32px;font-weight:700;letter-spacing:-0.04em;color:var(--white);text-transform:uppercase;line-height:1">MEADE</div>
+            <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--dim);margin-top:2px">Performance</div>
+            <div style="width:32px;height:0.5px;background:var(--rule);margin:12px auto"></div>
+            <div class="insta-copy">"Most GAA players don't lack effort. They lack a system."</div>
+          </div>
+          <div class="insta-handle" style="background:var(--black);padding:8px;border:0.5px solid var(--rule);border-top:none;color:var(--dim2)">@paddymeadeperformance</div>
+        </div>
+      </div>
+      <div class="usage-label">
+        <span class="usage-label-title">Instagram content</span>
+        <span class="usage-label-desc">Quote cards — black background, off-white text, EB Garamond italic for quote body</span>
+      </div>
+    </div>
+
+    <!-- Offer card -->
+    <div class="usage-cell">
+      <div class="usage-preview" style="background:var(--black)">
+        <div class="sample-card">
+          <div class="sample-tag">GAA Accelerator · Cohort 1</div>
+          <div class="sample-title">8 Weeks. Built for you.</div>
+          <div class="sample-body">The only GAA-specific S&C system built by a player who still plays at the highest level.</div>
+          <div class="sample-btn">DM "I'm In" →</div>
+        </div>
+      </div>
+      <div class="usage-label">
+        <span class="usage-label-title">Offer document</span>
+        <span class="usage-label-desc">Dark surface, white wordmark, Garamond italic for body. CTA button always off-white on black.</span>
+      </div>
+    </div>
+
+    <!-- Email header -->
+    <div class="usage-cell">
+      <div class="usage-preview" style="background:var(--grey);padding:24px">
+        <div style="width:240px;background:var(--black);border:0.5px solid var(--rule)">
+          <div style="padding:16px 20px;border-bottom:0.5px solid var(--rule);display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--white)">MEADE</div>
+              <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:10px;color:var(--dim)">Performance</div>
+            </div>
+            <div style="font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim2)">Cohort 1</div>
+          </div>
+          <div style="padding:20px">
+            <div style="font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim2);margin-bottom:8px">You're in</div>
+            <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:12px;color:var(--dim);line-height:1.6">Got your form. Here's everything you need to get started before May 1st.</div>
+            <div style="margin-top:14px;font-size:8px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);background:var(--white);padding:6px 12px;display:inline-block">Access community →</div>
+          </div>
+        </div>
+      </div>
+      <div class="usage-label">
+        <span class="usage-label-title">Email design</span>
+        <span class="usage-label-desc">Plain text preferred. When styled: full black, logo top, off-white CTA, Garamond for body copy.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Digital layout principles -->
+  <div class="rule-label"><span>Digital layout principles</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+    <div style="padding:32px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:16px">Spacing system</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Base unit: 4px. Scale: 4, 8, 12, 16, 24, 32, 48, 64, 80, 96</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Page margins: 40px mobile, 80px desktop</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Section gutters: 0.5px solid #2A2A28 always</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">No border radius on structural elements</span>
+        </div>
+      </div>
+    </div>
+    <div style="padding:32px;border:0.5px solid var(--rule);background:var(--grey)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--dim2);margin-bottom:16px">Interaction states</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Hover: opacity 0.7 or border brightens to #F5F2EC</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Focus: 0.5px offset outline in off-white</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Active: invert — black text on off-white</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:4px;height:4px;background:var(--white);flex-shrink:0"></div>
+          <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:var(--dim)">Transitions: 150ms ease — never instant, never bouncy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     BACK COVER
+═══════════════════════════ -->
+<section class="page back-cover">
+  <div class="back-cover-mark">mp<span>.</span></div>
+  <div class="back-cover-text">
+    <div class="back-cover-title">Meade Performance Brand Guidelines</div>
+    <div class="back-cover-sub">For questions about brand usage, contact Paddy directly.</div>
+  </div>
+  <div class="version-line">Version 1.0 · April 2025 · Confidential</div>
+</section>
+
+
+<!-- ── PDF DOWNLOAD BUTTON ── -->
+<button class="pdf-btn" onclick="window.print()">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <path d="M7 1v8M4 6l3 3 3-3M2 10v1a1 1 0 001 1h8a1 1 0 001-1v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Download PDF
+</button>
+
+</body>
+</html>
