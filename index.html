@@ -212,14 +212,22 @@ section{position:relative;padding:var(--s9) 0}
 /* ── wins slider ── */
 .wins-track-wrap{overflow:hidden;position:relative;margin:0 -32px;padding:0 32px}
 @media(max-width:640px){.wins-track-wrap{margin:0 -20px;padding:0 20px}}
-.wins-track{display:flex;gap:var(--s5);overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:var(--s5);scrollbar-width:none}
+.wins-track{display:flex;gap:var(--s5);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--s5);scrollbar-width:none;cursor:grab;user-select:none}
 .wins-track::-webkit-scrollbar{display:none}
-.win-card{flex:0 0 auto;width:min(80vw,340px);scroll-snap-align:start;background:var(--black);border:1px solid var(--rule);overflow:hidden}
+.wins-track.is-dragging{cursor:grabbing;scroll-snap-type:none}
+.wins-track.is-dragging .win-card img{pointer-events:none}
+.win-card{flex:0 0 auto;width:min(80vw,340px);scroll-snap-align:center;background:var(--black);border:1px solid var(--rule);overflow:hidden}
 .win-card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
-.wins-nav{display:flex;gap:var(--s3);margin-top:var(--s6)}
+.wins-nav{display:flex;align-items:center;justify-content:space-between;gap:var(--s5);margin-top:var(--s6)}
+.wins-nav-arrows{display:flex;gap:var(--s3)}
 .wins-nav button{width:40px;height:40px;border:1.5px solid var(--warm-grey);border-radius:2px;display:flex;align-items:center;justify-content:center;transition:border-color 200ms ease,transform 200ms ease}
 .wins-nav button:hover{border-color:var(--white);transform:translateY(-2px)}
 .wins-nav button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wins-dots{display:flex;gap:10px}
+.wins-dot{width:8px;height:8px;border-radius:50%;background:var(--rule);border:none;padding:0;transition:background 200ms ease,transform 200ms ease}
+.wins-dot:hover{background:var(--warm-grey)}
+.wins-dot.is-active{background:var(--white);transform:scale(1.25)}
+.wins-dot:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 /* ── programme picker ── */
 .picker-split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:var(--s7)}
@@ -484,16 +492,19 @@ footer{background:var(--black);border-top:1px solid var(--rule);padding:var(--s8
   </div>
   <div class="wins-track-wrap reveal">
     <div class="wins-track" id="winsTrack">
+      <div class="win-card"><img src="./assets/wins/jordan.jpg" alt="Jordan: I feel like I'm getting a lot more out of my training now and it's definitely helped me as a player." loading="lazy"></div>
       <div class="win-card"><img src="./assets/wins/sean.jpg" alt="Sean: I feel stronger on the pitch, I feel confident anytime I step on the pitch knowing I've been consistent with the right work." loading="lazy"></div>
       <div class="win-card"><img src="./assets/wins/keith.jpg" alt="Keith: Feel like my development has gone up a few levels. Body is in the best shape possible." loading="lazy"></div>
       <div class="win-card"><img src="./assets/wins/conor.jpg" alt="Conor: Gaining confidence. I'm back hitting close to my max speed again after a rough run of hamstring injuries." loading="lazy"></div>
-      <div class="win-card"><img src="./assets/wins/jordan.jpg" alt="Jordan: I feel like I'm getting a lot more out of my training now and it's definitely helped me as a player." loading="lazy"></div>
     </div>
   </div>
   <div class="container">
     <div class="wins-nav">
-      <button type="button" id="winsPrev" aria-label="Scroll wins left">&larr;</button>
-      <button type="button" id="winsNext" aria-label="Scroll wins right">&rarr;</button>
+      <div class="wins-nav-arrows">
+        <button type="button" id="winsPrev" aria-label="Previous win">&larr;</button>
+        <button type="button" id="winsNext" aria-label="Next win">&rarr;</button>
+      </div>
+      <div class="wins-dots" id="winsDots" role="tablist" aria-label="Select a win"></div>
     </div>
   </div>
 </section>
@@ -660,10 +671,72 @@ const io = new IntersectionObserver((entries)=>{
 },{threshold:0.15});
 document.querySelectorAll('.reveal, .reveal-stagger').forEach(el=>io.observe(el));
 
-// wins slider nav
+// wins slider: precise snap nav, dots, drag-to-scroll
 const track = document.getElementById('winsTrack');
-document.getElementById('winsPrev').addEventListener('click',()=>track.scrollBy({left:-320,behavior:'smooth'}));
-document.getElementById('winsNext').addEventListener('click',()=>track.scrollBy({left:320,behavior:'smooth'}));
+const winCards = Array.from(track.querySelectorAll('.win-card'));
+const dotsWrap = document.getElementById('winsDots');
+
+winCards.forEach((_,i)=>{
+  const dot = document.createElement('button');
+  dot.type = 'button';
+  dot.className = 'wins-dot';
+  dot.setAttribute('role','tab');
+  dot.setAttribute('aria-label',`Go to win ${i+1}`);
+  dot.addEventListener('click',()=>{
+    track.scrollTo({left:winCards[i].offsetLeft - track.offsetLeft, behavior:'smooth'});
+  });
+  dotsWrap.appendChild(dot);
+});
+const dots = Array.from(dotsWrap.children);
+
+function winStep(){
+  const style = getComputedStyle(track);
+  return winCards[0].getBoundingClientRect().width + parseFloat(style.columnGap || style.gap || 0);
+}
+function currentWinIndex(){
+  const step = winStep();
+  return Math.round(track.scrollLeft / step);
+}
+function setActiveDot(){
+  const idx = Math.min(currentWinIndex(), dots.length - 1);
+  dots.forEach((d,i)=>d.classList.toggle('is-active', i === idx));
+}
+document.getElementById('winsPrev').addEventListener('click',()=>{
+  const idx = Math.max(currentWinIndex() - 1, 0);
+  track.scrollTo({left: winCards[idx].offsetLeft - track.offsetLeft, behavior:'smooth'});
+});
+document.getElementById('winsNext').addEventListener('click',()=>{
+  const idx = Math.min(currentWinIndex() + 1, winCards.length - 1);
+  track.scrollTo({left: winCards[idx].offsetLeft - track.offsetLeft, behavior:'smooth'});
+});
+let winsScrollTimer;
+track.addEventListener('scroll',()=>{
+  clearTimeout(winsScrollTimer);
+  winsScrollTimer = setTimeout(setActiveDot, 80);
+});
+setActiveDot();
+
+// drag-to-scroll with mouse
+let isDown = false, dragStartX = 0, dragStartScroll = 0, didDrag = false;
+track.addEventListener('mousedown',(e)=>{
+  isDown = true; didDrag = false;
+  track.classList.add('is-dragging');
+  dragStartX = e.pageX;
+  dragStartScroll = track.scrollLeft;
+});
+window.addEventListener('mouseup',()=>{
+  isDown = false;
+  track.classList.remove('is-dragging');
+  if(didDrag) setTimeout(setActiveDot, 120);
+});
+window.addEventListener('mousemove',(e)=>{
+  if(!isDown) return;
+  e.preventDefault();
+  const delta = e.pageX - dragStartX;
+  if(Math.abs(delta) > 4) didDrag = true;
+  track.scrollLeft = dragStartScroll - delta;
+});
+track.addEventListener('click',(e)=>{ if(didDrag){ e.preventDefault(); e.stopPropagation(); } }, true);
 
 // quiz
 const quiz = document.getElementById('quiz');
