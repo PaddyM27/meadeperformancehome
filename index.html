@@ -214,10 +214,8 @@ section{position:relative;padding:var(--s9) 0}
 @media(max-width:640px){.wins-track-wrap{margin:0 -20px;padding:0 20px}}
 .wins-track{display:flex;gap:var(--s5);overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:var(--s5);scrollbar-width:none}
 .wins-track::-webkit-scrollbar{display:none}
-.win-card{flex:0 0 auto;width:min(78vw,300px);scroll-snap-align:start;background:var(--black);color:var(--white);border:1px solid var(--rule);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s3);min-height:220px}
-.win-card .win-stat{font-family:var(--f-head);font-weight:800;font-size:40px;letter-spacing:-0.02em;line-height:1}
-.win-card .win-line{font-size:14px;line-height:1.55;color:var(--body-ink);flex:1}
-.win-card .win-tag{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold)}
+.win-card{flex:0 0 auto;width:min(80vw,340px);scroll-snap-align:start;background:var(--black);border:1px solid var(--rule);overflow:hidden}
+.win-card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
 .wins-nav{display:flex;gap:var(--s3);margin-top:var(--s6)}
 .wins-nav button{width:40px;height:40px;border:1.5px solid var(--warm-grey);border-radius:2px;display:flex;align-items:center;justify-content:center;transition:border-color 200ms ease,transform 200ms ease}
 .wins-nav button:hover{border-color:var(--white);transform:translateY(-2px)}
@@ -486,36 +484,10 @@ footer{background:var(--black);border-top:1px solid var(--rule);padding:var(--s8
   </div>
   <div class="wins-track-wrap reveal">
     <div class="wins-track" id="winsTrack">
-      <div class="win-card">
-        <p class="win-stat">4-25</p>
-        <p class="win-line">Across 4 championship games, with speed he says has "improved a lot."</p>
-        <p class="win-tag">GAA Football, Forward</p>
-      </div>
-      <div class="win-card">
-        <p class="win-stat">1-05</p>
-        <p class="win-line">His first championship start under the programme. Scored inside it.</p>
-        <p class="win-tag">GAA Forward</p>
-      </div>
-      <div class="win-card">
-        <p class="win-stat">+20.5kg</p>
-        <p class="win-line">1RM bench, 87kg to 107.5kg in six months. Same bar, same standard, tested both ends.</p>
-        <p class="win-tag">Performance Passport</p>
-      </div>
-      <div class="win-card">
-        <p class="win-stat">More Ground</p>
-        <p class="win-line">"My manager said I've been looking great physically." Covering more of the pitch, coming off the shoulder more.</p>
-        <p class="win-tag">GAA Player</p>
-      </div>
-      <div class="win-card">
-        <p class="win-stat">New PBs</p>
-        <p class="win-line">Personal bests he'd never hit before, in front of new management.</p>
-        <p class="win-tag">GAA Club Player</p>
-      </div>
-      <div class="win-card">
-        <p class="win-stat">3 Weeks In</p>
-        <p class="win-line">"Proper structure back into training right before championship, which is ideal."</p>
-        <p class="win-tag">GAA Club Player</p>
-      </div>
+      <div class="win-card"><img src="./assets/wins/sean.jpg" alt="Sean: I feel stronger on the pitch, I feel confident anytime I step on the pitch knowing I've been consistent with the right work." loading="lazy"></div>
+      <div class="win-card"><img src="./assets/wins/keith.jpg" alt="Keith: Feel like my development has gone up a few levels. Body is in the best shape possible." loading="lazy"></div>
+      <div class="win-card"><img src="./assets/wins/conor.jpg" alt="Conor: Gaining confidence. I'm back hitting close to my max speed again after a rough run of hamstring injuries." loading="lazy"></div>
+      <div class="win-card"><img src="./assets/wins/jordan.jpg" alt="Jordan: I feel like I'm getting a lot more out of my training now and it's definitely helped me as a player." loading="lazy"></div>
     </div>
   </div>
   <div class="container">
