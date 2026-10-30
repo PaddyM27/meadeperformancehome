@@ -14,7 +14,7 @@ body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--bl
 
 /* ── NAV ── */
 .glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);box-shadow:inset 0 1px 1px rgba(255,255,255,0.14),inset 0 0 0 1px rgba(255,255,255,0.08),0 20px 40px -18px rgba(0,0,0,0.65)}
-nav.main-nav{position:fixed;top:16px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 20px;pointer-events:none}
+nav.main-nav{position:fixed;top:16px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 20px;pointer-events:none;-webkit-transform:translateZ(0);transform:translateZ(0);will-change:transform}
 nav.main-nav > *{pointer-events:auto}
 .nav-brand{text-decoration:none;font-family:'Inter Tight',sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.04em;line-height:0.85;color:var(--white);border-radius:999px;padding:14px 22px}
 .nav-brand em{display:block;font-family:'EB Garamond',serif;font-style:italic;font-weight:400;font-size:9px;letter-spacing:0;text-transform:none;color:var(--dim);margin-top:1px}
