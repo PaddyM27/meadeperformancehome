@@ -13,16 +13,20 @@ html{scroll-behavior:smooth;background:var(--black)}
 body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--black);color:var(--white);line-height:1.5;overflow-x:clip}
 
 /* ── NAV ── */
-nav.main-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;background:rgba(8,8,8,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
-.nav-brand{text-decoration:none;font-family:'Inter Tight',sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.04em;color:var(--white)}
+.glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);box-shadow:inset 0 1px 1px rgba(255,255,255,0.14),inset 0 0 0 1px rgba(255,255,255,0.08),0 20px 40px -18px rgba(0,0,0,0.65)}
+nav.main-nav{position:fixed;top:16px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 20px;pointer-events:none}
+nav.main-nav > *{pointer-events:auto}
+.nav-brand{text-decoration:none;font-family:'Inter Tight',sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.04em;color:var(--white);border-radius:999px;padding:14px 22px;display:inline-flex;align-items:center}
 .nav-brand-main{font-size:13px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--white)}
-.nav-links{display:flex;align-items:center;gap:48px}
-.nav-links a{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--white);opacity:0.75;text-decoration:none;transition:opacity 200ms ease}
+.nav-links{position:relative;display:flex;align-items:center;gap:48px;border-radius:999px;padding:0 32px}
+.nav-glider{position:absolute;top:8px;bottom:8px;left:0;width:0;border-radius:999px;background:rgba(255,255,255,0.14);box-shadow:inset 0 1px 1px rgba(255,255,255,0.3);opacity:0;transition:transform 480ms cubic-bezier(0.65,0.05,0,1),width 480ms cubic-bezier(0.65,0.05,0,1),opacity 250ms ease;pointer-events:none;z-index:0}
+.nav-links a{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--white);opacity:0.75;text-decoration:none;transition:opacity 200ms ease;position:relative;z-index:1;padding:14px 2px}
 .nav-links a:hover{opacity:1}
 .nav-links a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-.nav-cta{height:40px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;border-radius:2px;background:transparent;color:var(--white);border:1.5px solid var(--dim);text-decoration:none;transition:border-color 200ms ease,transform 200ms ease}
-.nav-cta:hover{border-color:var(--white);transform:translateY(-2px)}
-.nav-toggle{display:none;width:40px;height:40px;align-items:center;justify-content:center;border:1.5px solid var(--dim);border-radius:2px;flex-shrink:0;background:none;cursor:pointer}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-cta{height:44px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;border-radius:999px;color:var(--white);text-decoration:none;transition:transform 280ms cubic-bezier(0.34,1.56,0.64,1)}
+.nav-cta:hover{transform:translateY(-2px)}
+.nav-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;border-radius:999px;flex-shrink:0;background:none;cursor:pointer;color:var(--white)}
 .nav-toggle span{display:block;width:16px;height:1.5px;background:var(--white);position:relative;transition:transform 220ms ease,opacity 220ms ease}
 .nav-toggle span::before,.nav-toggle span::after{content:'';position:absolute;left:0;width:16px;height:1.5px;background:var(--white);transition:transform 220ms ease}
 .nav-toggle span::before{top:-5px}
@@ -30,10 +34,10 @@ nav.main-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-
 .nav-toggle[aria-expanded="true"] span{background:transparent}
 .nav-toggle[aria-expanded="true"] span::before{transform:translateY(5px) rotate(45deg)}
 .nav-toggle[aria-expanded="true"] span::after{transform:translateY(-5px) rotate(-45deg)}
-.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;z-index:99;background:var(--black);border-top:1px solid var(--rule);padding:48px 32px;flex-direction:column;gap:32px}
+.mobile-nav{display:none;position:fixed;inset:0;z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:32px;background:rgba(8,8,8,0.88);backdrop-filter:blur(24px) saturate(1.4)}
 .mobile-nav.is-open{display:flex}
-.mobile-nav a{font-family:'Inter Tight',sans-serif;font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:-0.01em;color:var(--white);text-decoration:none}
-@media(max-width:860px){.nav-links{display:none}.nav-toggle{display:flex}}
+.mobile-nav a{font-family:'Inter Tight',sans-serif;font-weight:800;font-size:clamp(32px,8vw,52px);text-transform:uppercase;letter-spacing:-0.02em;color:var(--white);text-decoration:none;opacity:0;transform:translateY(40px) rotate(4deg)}
+@media(max-width:860px){.nav-brand{padding:12px 18px}.nav-links{display:none}.nav-toggle{display:flex}}
 
 /* ── HERO ── */
 .hero{position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 80px 80px;overflow:hidden}
@@ -70,9 +74,11 @@ nav.main-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-
 .sport-eyebrow{font-size:9px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--dim2);margin-bottom:20px}
 .sport-heading{font-size:clamp(22px,2.8vw,36px);font-weight:700;letter-spacing:-0.03em;text-transform:uppercase;color:var(--white);margin-bottom:40px}
 .sport-btns{display:flex;align-items:center;justify-content:center;gap:2px;flex-wrap:wrap}
-.sport-btn{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);background:transparent;border:1px solid var(--dim2);padding:18px 52px;text-decoration:none;transition:background 150ms ease, color 150ms ease, transform 150ms ease, border-color 150ms ease}
-.sport-btn:hover{background:var(--white);color:var(--black);border-color:var(--white);transform:translateY(-2px)}
+.sport-btn{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);background:rgba(255,255,255,0.06);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-radius:999px;box-shadow:inset 0 1px 1px rgba(255,255,255,0.18),inset 0 0 0 1px rgba(255,255,255,0.14),0 10px 24px -12px rgba(0,0,0,0.5);padding:18px 52px;text-decoration:none;transition:background 280ms ease,box-shadow 280ms ease,transform 280ms cubic-bezier(0.34,1.56,0.64,1)}
+.sport-btn:hover{background:rgba(255,255,255,0.14);box-shadow:inset 0 1px 1px rgba(255,255,255,0.3),inset 0 0 0 1px rgba(255,255,255,0.26),0 16px 32px -12px rgba(0,0,0,0.55);transform:translateY(-2px)}
 .sport-btn:active{transform:translateY(0)}
+.btn-arrow{display:inline-block;transition:transform 280ms cubic-bezier(0.34,1.56,0.64,1)}
+.nav-cta:hover .btn-arrow,.sport-btn:hover .btn-arrow{transform:translate(2px,-2px)}
 
 /* ── PHONE SECTION ── */
 .phone-section{border-top:0.5px solid var(--rule);padding:96px 80px 0;text-align:center}
@@ -120,15 +126,17 @@ footer.sub-footer{border-top:0.5px solid var(--rule);padding:28px 80px;display:f
   footer.sub-footer{padding:20px;flex-direction:column;gap:12px;text-align:center}
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="main-nav">
-  <a href="./index.html" class="nav-brand">
+  <a href="./index.html" class="nav-brand glass">
     <span class="nav-brand-main">Meade Performance</span>
   </a>
-  <div class="nav-links">
+  <div class="nav-links glass" id="navLinks">
+    <span class="nav-glider" id="navGlider"></span>
     <a href="./about.html">About</a>
     <a href="./index.html#system">System</a>
     <a href="./index.html#gallery">On the Pitch</a>
@@ -136,8 +144,10 @@ footer.sub-footer{border-top:0.5px solid var(--rule);padding:28px 80px;display:f
     <a href="./index.html#programmes">Programmes</a>
     <a href="./reviews.html">Reviews</a>
   </div>
-  <a href="#get-started" class="nav-cta">Get Started</a>
-  <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu"><span></span></button>
+  <div class="nav-right">
+    <a href="#get-started" class="nav-cta glass">Get Started<span class="btn-arrow">&#8599;</span></a>
+    <button type="button" class="nav-toggle glass" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu"><span></span></button>
+  </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
   <a href="./about.html">About</a>
@@ -226,7 +236,7 @@ footer.sub-footer{border-top:0.5px solid var(--rule);padding:28px 80px;display:f
   <div class="sport-eyebrow">Built To Perform</div>
   <div class="sport-heading">One Programme. Every Sport.</div>
   <div class="sport-btns">
-    <a href="https://meadeperformance.fitr.training/p/builttoperformgaa" class="sport-btn" target="_blank" rel="noopener">Get Started</a>
+    <a href="https://meadeperformance.fitr.training/p/builttoperformgaa" class="sport-btn" target="_blank" rel="noopener">Get Started<span class="btn-arrow">&#8599;</span></a>
   </div>
 </div>
 
@@ -260,7 +270,7 @@ footer.sub-footer{border-top:0.5px solid var(--rule);padding:28px 80px;display:f
   <div class="sport-eyebrow">Built To Perform</div>
   <div class="sport-heading">One Programme. Every Sport.</div>
   <div class="sport-btns">
-    <a href="https://meadeperformance.fitr.training/p/builttoperformgaa" class="sport-btn" target="_blank" rel="noopener">Get Started</a>
+    <a href="https://meadeperformance.fitr.training/p/builttoperformgaa" class="sport-btn" target="_blank" rel="noopener">Get Started<span class="btn-arrow">&#8599;</span></a>
   </div>
 </div>
 
@@ -274,14 +284,44 @@ footer.sub-footer{border-top:0.5px solid var(--rule);padding:28px 80px;display:f
 <script>
 const navToggle = document.getElementById('navToggle');
 const mobileNav = document.getElementById('mobileNav');
+const mobileLinks = mobileNav.querySelectorAll('a');
 navToggle.addEventListener('click',()=>{
-  const open = mobileNav.classList.toggle('is-open');
+  const open = !mobileNav.classList.contains('is-open');
   navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  if(open){
+    mobileNav.classList.add('is-open');
+    if(window.gsap){
+      gsap.fromTo(mobileLinks,{opacity:0,y:40,rotate:4},{opacity:1,y:0,rotate:0,duration:0.6,stagger:0.07,ease:'back.out(1.6)'});
+    } else {
+      mobileLinks.forEach(a=>{a.style.opacity=1;a.style.transform='none'});
+    }
+  } else {
+    if(window.gsap){
+      gsap.to(mobileLinks,{opacity:0,y:20,duration:0.25,stagger:0.03,onComplete:()=>mobileNav.classList.remove('is-open')});
+    } else {
+      mobileNav.classList.remove('is-open');
+    }
+  }
 });
-mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+mobileLinks.forEach(a=>a.addEventListener('click',()=>{
   mobileNav.classList.remove('is-open');
   navToggle.setAttribute('aria-expanded','false');
+  mobileLinks.forEach(l=>{l.style.opacity=0;l.style.transform='translateY(40px) rotate(4deg)'});
 }));
+
+const navLinksPill = document.getElementById('navLinks');
+const navGlider = document.getElementById('navGlider');
+if(navLinksPill && navGlider){
+  const links = navLinksPill.querySelectorAll('a');
+  links.forEach(a=>{
+    a.addEventListener('mouseenter',()=>{
+      navGlider.style.width = a.offsetWidth + 'px';
+      navGlider.style.transform = `translateX(${a.offsetLeft}px)`;
+      navGlider.style.opacity = '1';
+    });
+  });
+  navLinksPill.addEventListener('mouseleave',()=>{ navGlider.style.opacity = '0'; });
+}
 </script>
 </body>
 </html>
